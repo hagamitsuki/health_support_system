@@ -41,7 +41,7 @@ public class UsersUpdateServlet extends HttpServlet {
 		    EntityManager em = DBUtil.createEntityManager();
 
 		    User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
-
+		    /*       em.find(エンティティクラス, 主キーの値) →UserテーブルからID（主キー）を指定して検索、取得*/
 
 		    Boolean code_duplicate_check = true;
 		    if(u.getCode().equals(request.getParameter("code"))){
