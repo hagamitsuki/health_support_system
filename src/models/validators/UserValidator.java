@@ -69,7 +69,8 @@ public class UserValidator {
         if(password_check_flag && (password == null || password.equals(""))){
             /*、新規登録（create）の場合はパスワードの入力値チェックをしたい、
              * (UserCreateServletからは"password_check_flag = true"が引数として渡される)
-             * でも変更（update）の場合は入力されていなければ入力値チェックは実行したくはない*/
+             * でも変更（update）の場合は入力されていなければ入力値チェックは実行したくはない
+             * (UserUpdateServletからは"password_check_flag = true"だが、password==nullではないのでこのif文の条件はtrueとならない。)*/
             return "パスワードを入力してください。";
         }
 
