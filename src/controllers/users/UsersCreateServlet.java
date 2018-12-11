@@ -21,13 +21,13 @@ import utils.EncryptUtil;
  * Servlet implementation class UserCreateServlet
  */
 @WebServlet("/users/create")
-public class UserCreateServlet extends HttpServlet {
+public class UsersCreateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserCreateServlet() {
+    public UsersCreateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
