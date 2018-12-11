@@ -21,12 +21,12 @@ import javax.persistence.Table;
                     ),
         @NamedQuery(name = "checkRegisteredCode",
                     query = "SELECT COUNT(u) FROM User AS u WHERE u.code =:code"
-                    /*指定されたユーザ番号がすでにデータベースに登録されているかチェック（指定されたユーザ番号＝:code）*/
+                    /*指定されたユーザー番号がすでにデータベースに登録されているかチェック（指定されたユーザ番号＝:code）*/
                     ),
         @NamedQuery(name = "checkLoginCodeAndPassword",
                     query = "SELECT u FROM User AS u WHERE u.delete_flag=0 AND u.code=:code AND u.password=:pass"
-                    /*                                     (現役)         かつ (指定されたユーザ番号とパスワードが両方DBに登録されているか)
-                     * ユーザがログインするときにユーザ番号とパスワードが正しいかをチェック*/
+                    /*                                     (現役)         かつ (指定されたユーザー番号とパスワードが両方DBに登録されているか)
+                     * ユーザーがログインするときにユーザー番号とパスワードが正しいかをチェック*/
                     )
 })
 @Entity
