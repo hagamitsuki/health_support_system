@@ -11,13 +11,27 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <h1>健康サポートシステム</h1>
+                <div id="header_menu">
+                    <h1><a href="<c:url value='/' />">健康サポートシステム</a></h1>&nbsp;&nbsp;&nbsp;
+                    <c:if test="${sessionScope.login_user != null}">
+                        <c:if test="${sessionScope.login_user.admin_flag == 1}">
+                            <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
+                        </c:if>
+                        <a href="<c:url value='/feelings/index' />">気分一覧</a>&nbsp;
+                    </c:if>
+                </div>
+                <c:if test="${sessionScope.login_user != null}">
+                    <div id="user_name">
+                        <c:out value="${sessionScope.login_user.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value='/logout' />">ログアウト</a>
+                    </div>
+                </c:if>
             </div>
             <div id="content">
                 ${param.content}
             </div>
             <div id="footer">
-                by haganomics.
+                by Chang-mitsu.
             </div>
         </div>
     </body>
