@@ -1,7 +1,6 @@
 package controllers.moods;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,7 +33,6 @@ public class MoodsNewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         Mood m = new Mood();
-        m.setMood_date(new Date(System.currentTimeMillis()));
         request.setAttribute("mood", m);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/moods/new.jsp");
