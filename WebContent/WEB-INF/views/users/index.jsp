@@ -15,7 +15,7 @@
                     <th>氏名</th>
                     <th>操作</th>
                 </tr>
-                <c:forEach var="user" items="${users}"> varStatus="status">
+                <c:forEach var="user" items="${users}" varStatus="status">
                     <%-- varStatus：現在のループ回数 --%>
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${user.code}" /></td>

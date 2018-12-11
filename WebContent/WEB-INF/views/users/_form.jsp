@@ -12,6 +12,7 @@
 <label for="code">ユーザー番号</label><br />
 <input type="text" name="code" value="${user.code}" />
 <br /><br />
+<%--ここでのuser.codeは、UsersNewServletから送られてきた"user(Userクラスのインスタンス)"のcode属性。以下同様。 --%>
 
 <label for="name">氏名</label><br />
 <input type="text" name="name" value="${user.name}" />
