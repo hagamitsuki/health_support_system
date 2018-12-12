@@ -42,7 +42,7 @@
                 </table>
 
                 <c:if test="${sessionScope.login_user.id == mood.user.id}">
-                    <p><a href="<c:url value='/moods/edit?id=${mood.id}' />">この日報を編集する</a></p>
+                    <p><a href="<c:url value='/moods/edit?id=${mood.id}' />">この気分を編集する</a></p>
                 </c:if>
             </c:when>
             <c:otherwise>
