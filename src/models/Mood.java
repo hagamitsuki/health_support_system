@@ -25,6 +25,16 @@ import javax.persistence.Table;
             name = "getMoodsCount",
             query = "SELECT COUNT(m) FROM Mood AS m"
             ),
+    @NamedQuery(//自分が作成した気分を取得
+            name = "getMyAllMoods",
+            query = "SELECT m FROM Mood AS m WHERE m.user = :user ORDER BY m.id DESC"
+            ),
+    @NamedQuery(//自分が作成した気分の数を取得
+            name = "getMyMoodsCount",
+            query = "SELECT COUNT(m) FROM Mood AS m WHERE m.user = :user"
+            )
+
+
 })
 @Entity
 public class Mood {
