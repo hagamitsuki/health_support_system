@@ -22,7 +22,7 @@
                         <td class="mood_title"><c:out value="${mood.title}" /></td>
                         <td class="mood_content"><c:out value="${mood.content}" /></td>
                         <td class="mood_date"><fmt:formatDate value='${mood.mood_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="mood_action"><a href="<c:url value='/moods/show?id=${mood.id}' />">編集する</a></td>
+                        <td class="mood_action"><a href="<c:url value='/moods/show?id=${mood.id}' />">詳細</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
