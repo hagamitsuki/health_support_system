@@ -154,3 +154,7 @@ table#mood_list .mood_date {
 table#mood_list .mood_action {
     width: 13%;
 }
+
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
