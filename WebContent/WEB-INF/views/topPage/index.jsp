@@ -14,14 +14,21 @@
                 <select name="mood.id">
                 <%-- "mood.id"という名前、value="${mood.id}"という内容で送信される。送信先のサーブレットで扱えるのはname="mood.id"--%>
                     <c:forEach var="mood" items="${moods}"><%--ログインユーザーのmoodsリストの中から一つずつ取得してmoodに格納--%>
-                    <option value="${mood.id}"><c:out value="${mood.title}" /></option>
+                        <option value="${mood.id}"><c:out value="${mood.title}" /></option>
                     </c:forEach>
                 </select>
                 <input type="submit" value="入力">
             </form>
                 <br /><br />
 
-
+        <%-- フルカレンダー 始まり--%>
+         <div id="calendar">
+            <script>
+                 $('#calendar').fullCalendar();
+            </script>
+         </div>
+        <%-- フルカレンダー 終わり--%>
+        <br /><br />
 
     </c:param>
 </c:import>

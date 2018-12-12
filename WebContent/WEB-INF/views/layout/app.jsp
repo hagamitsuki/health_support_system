@@ -7,6 +7,16 @@
         <title>健康サポートシステム</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
+
+        <%-- フルカレンダー 始まり--%>
+        <link rel="stylesheet" href="<c:url value='/css/fullcalendar.min.css' />" type="text/css">
+        <script src="<c:url value='/js/moment.min.js' />" type="text/javascript"></script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="<c:url value='/js/jquery-ui.min.js' />" type="text/javascript"></script>
+        <script src="<c:url value='/js/fullcalendar.min.js' />" type="text/javascript"></script>
+        <script src="<c:url value='/js/ja.js' />" type="text/javascript"></script>
+        <%-- フルカレンダー 終わり--%>
+
     </head>
     <body>
         <div id="wrapper">
