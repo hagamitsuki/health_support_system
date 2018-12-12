@@ -1,7 +1,9 @@
 package controllers.toppage;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Mood;
+import models.User;
+import utils.DBUtil;
+
 /**
  * Servlet implementation class TopPageIndexServlet
  */
-@WebServlet("/index.html")
+@WebServlet("/index.html")//コンテキストパス"/"のこと
 public class TopPageIndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,8 +39,27 @@ public class TopPageIndexServlet extends HttpServlet {
 	        request.getSession().removeAttribute("flush");
 	    }
 
+	    /*ログインしたユーザーが登録している気分を取得して送る*/
+	    EntityManager em = DBUtil.createEntityManager();
+
+        User login_user = (User)request.getSession().getAttribute("login_user");
+
+        List<Mood> moods = em.createNamedQuery("getMyAllMoods", Mood.class)//getMyAllMoodsを以下の条件で実行するよ
+                              .setParameter("user", login_user)//条件："user"は上で取得したlogin_userですよ
+                              .getResultList();
+
+        em.close();
+
+        request.setAttribute("moods", moods);
+
+
 	    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/index.jsp");
         rd.forward(request, response);
-}
+
+
+
+
+	}
 
 }
+

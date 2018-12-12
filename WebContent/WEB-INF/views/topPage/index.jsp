@@ -9,16 +9,19 @@
         </c:if>
         <h2>健康サポートシステムへようこそ</h2>
 
-            <label for="mood">今の気分を選択してください</label><br />
+            <label for="mood">今の気分を選択してね</label><br />
             <form method="GET" action="<c:url value='/results/index' />">
-            <select name="mood">
-                <option value="what">-- 今の気分は？ --</option>
-                <c:forEach var="mood" items="${moods}">
-                <option value="mood"><c:out value="${mood}" /></option>
-                </c:forEach>
-            </select>
-            <input type="submit" name="submit" value="入力">
+                <select name="mood.id">
+                <%-- "mood.id"という名前、value="${mood.id}"という内容で送信される。送信先のサーブレットで扱えるのはname="mood.id"--%>
+                    <c:forEach var="mood" items="${moods}"><%--ログインユーザーのmoodsリストの中から一つずつ取得してmoodに格納--%>
+                    <option value="${mood.id}"><c:out value="${mood.title}" /></option>
+                    </c:forEach>
+                </select>
+                <input type="submit" value="入力">
             </form>
                 <br /><br />
+
+
+
     </c:param>
 </c:import>
